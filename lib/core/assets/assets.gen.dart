@@ -18,11 +18,17 @@ class $AssetsIconsGen {
   /// Directory path: assets/icons/alert
   $AssetsIconsAlertGen get alert => const $AssetsIconsAlertGen();
 
+  /// File path: assets/icons/calendar.svg
+  SvgGenImage get calendar => const SvgGenImage('assets/icons/calendar.svg');
+
   /// Directory path: assets/icons/menu
   $AssetsIconsMenuGen get menu => const $AssetsIconsMenuGen();
 
   /// Directory path: assets/icons/nav
   $AssetsIconsNavGen get nav => const $AssetsIconsNavGen();
+
+  /// List of all assets
+  List<SvgGenImage> get values => [calendar];
 }
 
 class $AssetsImagesGen {
