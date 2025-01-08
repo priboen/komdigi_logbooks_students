@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:komdigi_logbooks_students/core/constants/colors.dart';
 import 'package:komdigi_logbooks_students/datasources/auth_remote_datasource.dart';
+import 'package:komdigi_logbooks_students/datasources/grade_remote_datasources.dart';
 import 'package:komdigi_logbooks_students/datasources/internship_remote_datasources.dart';
 import 'package:komdigi_logbooks_students/datasources/progress_remote_datasources.dart';
 import 'package:komdigi_logbooks_students/datasources/project_remote_datasources.dart';
 import 'package:komdigi_logbooks_students/presentation/auth/bloc/login_bloc/login_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/auth/bloc/logout_bloc/logout_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/auth/pages/login_page.dart';
+import 'package:komdigi_logbooks_students/presentation/grades/bloc/get_grades/get_grades_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/add_internship/add_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/get_internship/get_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/get_pembimbing/get_pembimbing_bloc.dart';
@@ -53,6 +55,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => GetProgressBloc(ProgressRemoteDatasources()),
+        ),
+        BlocProvider(
+          create: (context) => GetGradesBloc(GradeRemoteDatasources()),
         ),
       ],
       child: MaterialApp(

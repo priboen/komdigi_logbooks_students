@@ -5,6 +5,7 @@ import 'package:komdigi_logbooks_students/core/constants/colors.dart';
 import 'package:komdigi_logbooks_students/core/extensions/build_context_ext.dart';
 import 'package:komdigi_logbooks_students/datasources/auth_local_datasources.dart';
 import 'package:komdigi_logbooks_students/models/auth_response_model.dart';
+import 'package:komdigi_logbooks_students/presentation/grades/pages/grades_pages.dart';
 import 'package:komdigi_logbooks_students/presentation/home/widgets/menu_button.dart';
 import 'package:komdigi_logbooks_students/presentation/project/pages/project_pages.dart';
 
@@ -105,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Jadwal Terdekat Anda',
+                      'Profile Anda',
                       style: TextStyle(
                         color: AppColors.gray3,
                         fontSize: 16.0,
@@ -114,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SpaceHeight(16.0),
                     const Text(
-                      'Nama Peserta',
+                      'Nama User',
                       style: TextStyle(
                         color: AppColors.gray2,
                         fontSize: 12.0,
@@ -129,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SpaceHeight(16.0),
                     const Text(
-                      'Project',
+                      'Email User',
                       style: TextStyle(
                         color: AppColors.gray2,
                         fontSize: 12.0,
@@ -144,54 +145,19 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SpaceHeight(16.0),
                     const Text(
-                      'Tanggal Pertemuan',
+                      'Nomor Handphone',
                       style: TextStyle(
                         color: AppColors.gray2,
                         fontSize: 12.0,
                       ),
                     ),
-                    // BlocBuilder<GetPembimbingBloc, GetPembimbingState>(
-                    //   builder: (context, state) {
-                    //     return state.maybeWhen(
-                    //       orElse: () {
-                    //         return const Text(
-                    //           'Loading...',
-                    //           style: TextStyle(
-                    //             color: AppColors.gray3,
-                    //             fontSize: 16.0,
-                    //           ),
-                    //         );
-                    //       },
-                    //       loading: () {
-                    //         return const Text(
-                    //           'Loading...',
-                    //           style: TextStyle(
-                    //             color: AppColors.gray3,
-                    //             fontSize: 16.0,
-                    //           ),
-                    //         );
-                    //       },
-                    //       error: (error) {
-                    //         return const Text(
-                    //           'Error',
-                    //           style: TextStyle(
-                    //             color: AppColors.gray3,
-                    //             fontSize: 16.0,
-                    //           ),
-                    //         );
-                    //       },
-                    //       success: (pembimbing) {
-                    //         return Text(
-                    //           pembimbing.length.toString(),
-                    //           style: const TextStyle(
-                    //             color: AppColors.gray3,
-                    //             fontSize: 16.0,
-                    //           ),
-                    //         );
-                    //       },
-                    //     );
-                    //   },
-                    // ),
+                    Text(
+                      user?.phone ?? 'Loading...',
+                      style: const TextStyle(
+                        color: AppColors.gray3,
+                        fontSize: 12.0,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -221,7 +187,9 @@ class _HomePageState extends State<HomePage> {
                       color: AppColors.homeYellow,
                       label: 'Nilai Akhir',
                       iconPath: Assets.icons.menu.transaksiHariIni.path,
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push(const GradesPages());
+                      },
                     )
                   ],
                 ),
