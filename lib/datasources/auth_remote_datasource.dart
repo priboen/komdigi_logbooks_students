@@ -62,7 +62,7 @@ class AuthRemoteDatasource {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       };
-      final url = Uri.parse('${Variables.baseUrl}/api/supervisor/register');
+      final url = Uri.parse('${Variables.baseUrl}/api/student/register');
       final request = http.MultipartRequest('POST', url)
         ..headers.addAll(headers)
         ..fields['email'] = email

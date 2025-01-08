@@ -50,6 +50,7 @@ class ProgressRemoteDatasources {
       final request = http.MultipartRequest('POST', url)
         ..headers.addAll(headers)
         ..fields['internship_id'] = internshipId.toString()
+        ..fields['name'] = name.toString()
         ..fields['meeting'] = meeting.toString()
         ..fields['date'] = date.toString()
         ..files.add(

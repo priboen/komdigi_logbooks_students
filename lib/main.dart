@@ -13,6 +13,7 @@ import 'package:komdigi_logbooks_students/presentation/grades/bloc/get_grades/ge
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/add_internship/add_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/get_internship/get_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/get_pembimbing/get_pembimbing_bloc.dart';
+import 'package:komdigi_logbooks_students/presentation/profile/bloc/update_profile_bloc/update_profile_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/progress/bloc/add_progress/add_progress_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/progress/bloc/get_progress/get_progress_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/project/bloc/get_project/get_project_bloc.dart';
@@ -58,6 +59,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => GetGradesBloc(GradeRemoteDatasources()),
+        ),
+        BlocProvider(
+          create: (context) => UpdateProfileBloc(AuthRemoteDatasource()),
         ),
       ],
       child: MaterialApp(
