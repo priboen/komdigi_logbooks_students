@@ -10,7 +10,7 @@ part 'get_project_bloc.freezed.dart';
 class GetProjectBloc extends Bloc<GetProjectEvent, GetProjectState> {
   final ProjectRemoteDatasources datasources;
   GetProjectBloc(this.datasources) : super(const _Initial()) {
-    on<GetProjectEvent>((event, emit) async {
+    on<_GetProject>((event, emit) async {
       emit(const _Loading());
       final result = await datasources.getProject();
       result.fold(
