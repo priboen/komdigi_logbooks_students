@@ -5,7 +5,7 @@ import 'package:komdigi_logbooks_students/core/constants/colors.dart';
 import 'package:komdigi_logbooks_students/core/extensions/build_context_ext.dart';
 import 'package:komdigi_logbooks_students/datasources/auth_local_datasources.dart';
 import 'package:komdigi_logbooks_students/models/auth_response_model.dart';
-import 'package:komdigi_logbooks_students/presentation/home/pages/widgets/menu_button.dart';
+import 'package:komdigi_logbooks_students/presentation/home/widgets/menu_button.dart';
 import 'package:komdigi_logbooks_students/presentation/project/pages/project_pages.dart';
 
 class HomePage extends StatefulWidget {
