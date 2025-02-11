@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:komdigi_logbooks_students/core/assets/assets.dart';
-import 'package:komdigi_logbooks_students/core/components/spaces.dart';
 import 'package:komdigi_logbooks_students/core/core.dart';
 import 'package:komdigi_logbooks_students/core/extensions/build_context_ext.dart';
 import 'package:komdigi_logbooks_students/datasources/auth_local_datasources.dart';

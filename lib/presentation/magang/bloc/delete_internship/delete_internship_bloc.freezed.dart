@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_internship_bloc.dart';
+part of 'delete_internship_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,95 +15,66 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$AddInternshipEvent {
+mixin _$DeleteInternshipEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)
-        addInternship,
+    required TResult Function(int id) deleteInternship,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)?
-        addInternship,
+    TResult? Function(int id)? deleteInternship,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)?
-        addInternship,
+    TResult Function(int id)? deleteInternship,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_AddInternship value) addInternship,
+    required TResult Function(_DeleteInternship value) deleteInternship,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_AddInternship value)? addInternship,
+    TResult? Function(_DeleteInternship value)? deleteInternship,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_AddInternship value)? addInternship,
+    TResult Function(_DeleteInternship value)? deleteInternship,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AddInternshipEventCopyWith<$Res> {
-  factory $AddInternshipEventCopyWith(
-          AddInternshipEvent value, $Res Function(AddInternshipEvent) then) =
-      _$AddInternshipEventCopyWithImpl<$Res, AddInternshipEvent>;
+abstract class $DeleteInternshipEventCopyWith<$Res> {
+  factory $DeleteInternshipEventCopyWith(DeleteInternshipEvent value,
+          $Res Function(DeleteInternshipEvent) then) =
+      _$DeleteInternshipEventCopyWithImpl<$Res, DeleteInternshipEvent>;
 }
 
 /// @nodoc
-class _$AddInternshipEventCopyWithImpl<$Res, $Val extends AddInternshipEvent>
-    implements $AddInternshipEventCopyWith<$Res> {
-  _$AddInternshipEventCopyWithImpl(this._value, this._then);
+class _$DeleteInternshipEventCopyWithImpl<$Res,
+        $Val extends DeleteInternshipEvent>
+    implements $DeleteInternshipEventCopyWith<$Res> {
+  _$DeleteInternshipEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AddInternshipEvent
+  /// Create a copy of DeleteInternshipEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -116,13 +87,13 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$AddInternshipEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$DeleteInternshipEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AddInternshipEvent
+  /// Create a copy of DeleteInternshipEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -133,7 +104,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'AddInternshipEvent.started()';
+    return 'DeleteInternshipEvent.started()';
   }
 
   @override
@@ -149,17 +120,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)
-        addInternship,
+    required TResult Function(int id) deleteInternship,
   }) {
     return started();
   }
@@ -168,17 +129,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)?
-        addInternship,
+    TResult? Function(int id)? deleteInternship,
   }) {
     return started?.call();
   }
@@ -187,17 +138,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)?
-        addInternship,
+    TResult Function(int id)? deleteInternship,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -210,7 +151,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_AddInternship value) addInternship,
+    required TResult Function(_DeleteInternship value) deleteInternship,
   }) {
     return started(this);
   }
@@ -219,7 +160,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_AddInternship value)? addInternship,
+    TResult? Function(_DeleteInternship value)? deleteInternship,
   }) {
     return started?.call(this);
   }
@@ -228,7 +169,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_AddInternship value)? addInternship,
+    TResult Function(_DeleteInternship value)? deleteInternship,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -238,242 +179,103 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements AddInternshipEvent {
+abstract class _Started implements DeleteInternshipEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$AddInternshipImplCopyWith<$Res> {
-  factory _$$AddInternshipImplCopyWith(
-          _$AddInternshipImpl value, $Res Function(_$AddInternshipImpl) then) =
-      __$$AddInternshipImplCopyWithImpl<$Res>;
+abstract class _$$DeleteInternshipImplCopyWith<$Res> {
+  factory _$$DeleteInternshipImplCopyWith(_$DeleteInternshipImpl value,
+          $Res Function(_$DeleteInternshipImpl) then) =
+      __$$DeleteInternshipImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {String emailLeader,
-      String campusName,
-      List<String> memberEmails,
-      int? projectId,
-      int? supervisorId,
-      File letterUrl,
-      File memberPhotoUrl,
-      String startDate,
-      String endDate});
+  $Res call({int id});
 }
 
 /// @nodoc
-class __$$AddInternshipImplCopyWithImpl<$Res>
-    extends _$AddInternshipEventCopyWithImpl<$Res, _$AddInternshipImpl>
-    implements _$$AddInternshipImplCopyWith<$Res> {
-  __$$AddInternshipImplCopyWithImpl(
-      _$AddInternshipImpl _value, $Res Function(_$AddInternshipImpl) _then)
+class __$$DeleteInternshipImplCopyWithImpl<$Res>
+    extends _$DeleteInternshipEventCopyWithImpl<$Res, _$DeleteInternshipImpl>
+    implements _$$DeleteInternshipImplCopyWith<$Res> {
+  __$$DeleteInternshipImplCopyWithImpl(_$DeleteInternshipImpl _value,
+      $Res Function(_$DeleteInternshipImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AddInternshipEvent
+  /// Create a copy of DeleteInternshipEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailLeader = null,
-    Object? campusName = null,
-    Object? memberEmails = null,
-    Object? projectId = freezed,
-    Object? supervisorId = freezed,
-    Object? letterUrl = null,
-    Object? memberPhotoUrl = null,
-    Object? startDate = null,
-    Object? endDate = null,
+    Object? id = null,
   }) {
-    return _then(_$AddInternshipImpl(
-      emailLeader: null == emailLeader
-          ? _value.emailLeader
-          : emailLeader // ignore: cast_nullable_to_non_nullable
-              as String,
-      campusName: null == campusName
-          ? _value.campusName
-          : campusName // ignore: cast_nullable_to_non_nullable
-              as String,
-      memberEmails: null == memberEmails
-          ? _value._memberEmails
-          : memberEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      projectId: freezed == projectId
-          ? _value.projectId
-          : projectId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      supervisorId: freezed == supervisorId
-          ? _value.supervisorId
-          : supervisorId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      letterUrl: null == letterUrl
-          ? _value.letterUrl
-          : letterUrl // ignore: cast_nullable_to_non_nullable
-              as File,
-      memberPhotoUrl: null == memberPhotoUrl
-          ? _value.memberPhotoUrl
-          : memberPhotoUrl // ignore: cast_nullable_to_non_nullable
-              as File,
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$DeleteInternshipImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$AddInternshipImpl implements _AddInternship {
-  const _$AddInternshipImpl(
-      {required this.emailLeader,
-      required this.campusName,
-      required final List<String> memberEmails,
-      required this.projectId,
-      required this.supervisorId,
-      required this.letterUrl,
-      required this.memberPhotoUrl,
-      required this.startDate,
-      required this.endDate})
-      : _memberEmails = memberEmails;
+class _$DeleteInternshipImpl implements _DeleteInternship {
+  const _$DeleteInternshipImpl(this.id);
 
   @override
-  final String emailLeader;
-  @override
-  final String campusName;
-  final List<String> _memberEmails;
-  @override
-  List<String> get memberEmails {
-    if (_memberEmails is EqualUnmodifiableListView) return _memberEmails;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_memberEmails);
-  }
-
-  @override
-  final int? projectId;
-  @override
-  final int? supervisorId;
-  @override
-  final File letterUrl;
-  @override
-  final File memberPhotoUrl;
-  @override
-  final String startDate;
-  @override
-  final String endDate;
+  final int id;
 
   @override
   String toString() {
-    return 'AddInternshipEvent.addInternship(emailLeader: $emailLeader, campusName: $campusName, memberEmails: $memberEmails, projectId: $projectId, supervisorId: $supervisorId, letterUrl: $letterUrl, memberPhotoUrl: $memberPhotoUrl, startDate: $startDate, endDate: $endDate)';
+    return 'DeleteInternshipEvent.deleteInternship(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AddInternshipImpl &&
-            (identical(other.emailLeader, emailLeader) ||
-                other.emailLeader == emailLeader) &&
-            (identical(other.campusName, campusName) ||
-                other.campusName == campusName) &&
-            const DeepCollectionEquality()
-                .equals(other._memberEmails, _memberEmails) &&
-            (identical(other.projectId, projectId) ||
-                other.projectId == projectId) &&
-            (identical(other.supervisorId, supervisorId) ||
-                other.supervisorId == supervisorId) &&
-            (identical(other.letterUrl, letterUrl) ||
-                other.letterUrl == letterUrl) &&
-            (identical(other.memberPhotoUrl, memberPhotoUrl) ||
-                other.memberPhotoUrl == memberPhotoUrl) &&
-            (identical(other.startDate, startDate) ||
-                other.startDate == startDate) &&
-            (identical(other.endDate, endDate) || other.endDate == endDate));
+            other is _$DeleteInternshipImpl &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      emailLeader,
-      campusName,
-      const DeepCollectionEquality().hash(_memberEmails),
-      projectId,
-      supervisorId,
-      letterUrl,
-      memberPhotoUrl,
-      startDate,
-      endDate);
+  int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of AddInternshipEvent
+  /// Create a copy of DeleteInternshipEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AddInternshipImplCopyWith<_$AddInternshipImpl> get copyWith =>
-      __$$AddInternshipImplCopyWithImpl<_$AddInternshipImpl>(this, _$identity);
+  _$$DeleteInternshipImplCopyWith<_$DeleteInternshipImpl> get copyWith =>
+      __$$DeleteInternshipImplCopyWithImpl<_$DeleteInternshipImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)
-        addInternship,
+    required TResult Function(int id) deleteInternship,
   }) {
-    return addInternship(emailLeader, campusName, memberEmails, projectId,
-        supervisorId, letterUrl, memberPhotoUrl, startDate, endDate);
+    return deleteInternship(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)?
-        addInternship,
+    TResult? Function(int id)? deleteInternship,
   }) {
-    return addInternship?.call(emailLeader, campusName, memberEmails, projectId,
-        supervisorId, letterUrl, memberPhotoUrl, startDate, endDate);
+    return deleteInternship?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(
-            String emailLeader,
-            String campusName,
-            List<String> memberEmails,
-            int? projectId,
-            int? supervisorId,
-            File letterUrl,
-            File memberPhotoUrl,
-            String startDate,
-            String endDate)?
-        addInternship,
+    TResult Function(int id)? deleteInternship,
     required TResult orElse(),
   }) {
-    if (addInternship != null) {
-      return addInternship(emailLeader, campusName, memberEmails, projectId,
-          supervisorId, letterUrl, memberPhotoUrl, startDate, endDate);
+    if (deleteInternship != null) {
+      return deleteInternship(id);
     }
     return orElse();
   }
@@ -482,70 +284,53 @@ class _$AddInternshipImpl implements _AddInternship {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_AddInternship value) addInternship,
+    required TResult Function(_DeleteInternship value) deleteInternship,
   }) {
-    return addInternship(this);
+    return deleteInternship(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_AddInternship value)? addInternship,
+    TResult? Function(_DeleteInternship value)? deleteInternship,
   }) {
-    return addInternship?.call(this);
+    return deleteInternship?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_AddInternship value)? addInternship,
+    TResult Function(_DeleteInternship value)? deleteInternship,
     required TResult orElse(),
   }) {
-    if (addInternship != null) {
-      return addInternship(this);
+    if (deleteInternship != null) {
+      return deleteInternship(this);
     }
     return orElse();
   }
 }
 
-abstract class _AddInternship implements AddInternshipEvent {
-  const factory _AddInternship(
-      {required final String emailLeader,
-      required final String campusName,
-      required final List<String> memberEmails,
-      required final int? projectId,
-      required final int? supervisorId,
-      required final File letterUrl,
-      required final File memberPhotoUrl,
-      required final String startDate,
-      required final String endDate}) = _$AddInternshipImpl;
+abstract class _DeleteInternship implements DeleteInternshipEvent {
+  const factory _DeleteInternship(final int id) = _$DeleteInternshipImpl;
 
-  String get emailLeader;
-  String get campusName;
-  List<String> get memberEmails;
-  int? get projectId;
-  int? get supervisorId;
-  File get letterUrl;
-  File get memberPhotoUrl;
-  String get startDate;
-  String get endDate;
+  int get id;
 
-  /// Create a copy of AddInternshipEvent
+  /// Create a copy of DeleteInternshipEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AddInternshipImplCopyWith<_$AddInternshipImpl> get copyWith =>
+  _$$DeleteInternshipImplCopyWith<_$DeleteInternshipImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$AddInternshipState {
+mixin _$DeleteInternshipState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AddInternshipResponseModel Internship) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -553,7 +338,7 @@ mixin _$AddInternshipState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AddInternshipResponseModel Internship)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -561,7 +346,7 @@ mixin _$AddInternshipState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AddInternshipResponseModel Internship)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -594,23 +379,24 @@ mixin _$AddInternshipState {
 }
 
 /// @nodoc
-abstract class $AddInternshipStateCopyWith<$Res> {
-  factory $AddInternshipStateCopyWith(
-          AddInternshipState value, $Res Function(AddInternshipState) then) =
-      _$AddInternshipStateCopyWithImpl<$Res, AddInternshipState>;
+abstract class $DeleteInternshipStateCopyWith<$Res> {
+  factory $DeleteInternshipStateCopyWith(DeleteInternshipState value,
+          $Res Function(DeleteInternshipState) then) =
+      _$DeleteInternshipStateCopyWithImpl<$Res, DeleteInternshipState>;
 }
 
 /// @nodoc
-class _$AddInternshipStateCopyWithImpl<$Res, $Val extends AddInternshipState>
-    implements $AddInternshipStateCopyWith<$Res> {
-  _$AddInternshipStateCopyWithImpl(this._value, this._then);
+class _$DeleteInternshipStateCopyWithImpl<$Res,
+        $Val extends DeleteInternshipState>
+    implements $DeleteInternshipStateCopyWith<$Res> {
+  _$DeleteInternshipStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AddInternshipState
+  /// Create a copy of DeleteInternshipState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -623,13 +409,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$AddInternshipStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$DeleteInternshipStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AddInternshipState
+  /// Create a copy of DeleteInternshipState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -640,7 +426,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AddInternshipState.initial()';
+    return 'DeleteInternshipState.initial()';
   }
 
   @override
@@ -657,7 +443,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AddInternshipResponseModel Internship) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -668,7 +454,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AddInternshipResponseModel Internship)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -679,7 +465,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AddInternshipResponseModel Internship)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -727,7 +513,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements AddInternshipState {
+abstract class _Initial implements DeleteInternshipState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -740,13 +526,13 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$AddInternshipStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$DeleteInternshipStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AddInternshipState
+  /// Create a copy of DeleteInternshipState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -757,7 +543,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'AddInternshipState.loading()';
+    return 'DeleteInternshipState.loading()';
   }
 
   @override
@@ -774,7 +560,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AddInternshipResponseModel Internship) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -785,7 +571,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AddInternshipResponseModel Internship)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -796,7 +582,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AddInternshipResponseModel Internship)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -844,7 +630,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements AddInternshipState {
+abstract class _Loading implements DeleteInternshipState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -853,76 +639,48 @@ abstract class _$$SuccessImplCopyWith<$Res> {
   factory _$$SuccessImplCopyWith(
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AddInternshipResponseModel Internship});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$AddInternshipStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$DeleteInternshipStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AddInternshipState
+  /// Create a copy of DeleteInternshipState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? Internship = null,
-  }) {
-    return _then(_$SuccessImpl(
-      null == Internship
-          ? _value.Internship
-          : Internship // ignore: cast_nullable_to_non_nullable
-              as AddInternshipResponseModel,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.Internship);
-
-  @override
-  final AddInternshipResponseModel Internship;
+  const _$SuccessImpl();
 
   @override
   String toString() {
-    return 'AddInternshipState.success(Internship: $Internship)';
+    return 'DeleteInternshipState.success()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            (identical(other.Internship, Internship) ||
-                other.Internship == Internship));
+        (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, Internship);
-
-  /// Create a copy of AddInternshipState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AddInternshipResponseModel Internship) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) {
-    return success(Internship);
+    return success();
   }
 
   @override
@@ -930,10 +688,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AddInternshipResponseModel Internship)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) {
-    return success?.call(Internship);
+    return success?.call();
   }
 
   @override
@@ -941,12 +699,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AddInternshipResponseModel Internship)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(Internship);
+      return success();
     }
     return orElse();
   }
@@ -989,17 +747,8 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements AddInternshipState {
-  const factory _Success(final AddInternshipResponseModel Internship) =
-      _$SuccessImpl;
-
-  AddInternshipResponseModel get Internship;
-
-  /// Create a copy of AddInternshipState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Success implements DeleteInternshipState {
+  const factory _Success() = _$SuccessImpl;
 }
 
 /// @nodoc
@@ -1013,13 +762,13 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$AddInternshipStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$DeleteInternshipStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AddInternshipState
+  /// Create a copy of DeleteInternshipState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1045,7 +794,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'AddInternshipState.error(message: $message)';
+    return 'DeleteInternshipState.error(message: $message)';
   }
 
   @override
@@ -1059,7 +808,7 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of AddInternshipState
+  /// Create a copy of DeleteInternshipState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -1072,7 +821,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(AddInternshipResponseModel Internship) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -1083,7 +832,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(AddInternshipResponseModel Internship)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -1094,7 +843,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(AddInternshipResponseModel Internship)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1142,12 +891,12 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements AddInternshipState {
+abstract class _Error implements DeleteInternshipState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
 
-  /// Create a copy of AddInternshipState
+  /// Create a copy of DeleteInternshipState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>

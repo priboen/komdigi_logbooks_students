@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:komdigi_logbooks_students/core/components/spaces.dart';
 import 'package:komdigi_logbooks_students/core/core.dart';
 import 'package:komdigi_logbooks_students/core/extensions/build_context_ext.dart';
 import 'package:komdigi_logbooks_students/main_page.dart';

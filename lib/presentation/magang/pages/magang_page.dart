@@ -5,9 +5,12 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:komdigi_logbooks_students/core/core.dart';
 import 'package:komdigi_logbooks_students/core/extensions/extensions.dart';
 import 'package:komdigi_logbooks_students/datasources/auth_local_datasources.dart';
+import 'package:komdigi_logbooks_students/main_page.dart';
 import 'package:komdigi_logbooks_students/models/auth_response_model.dart';
+import 'package:komdigi_logbooks_students/presentation/magang/bloc/delete_internship/delete_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/get_internship/get_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/pages/register_magang_page.dart';
+import 'package:komdigi_logbooks_students/presentation/magang/pages/register_personal_magang_page.dart';
 
 class MagangPage extends StatefulWidget {
   const MagangPage({super.key});
@@ -61,10 +64,18 @@ class _MagangPageState extends State<MagangPage> {
                           Text('Belum ada data magang'),
                           const SpaceHeight(32.0),
                           Button.filled(
-                              onPressed: () {
-                                context.push(RegisterMagangPage());
-                              },
-                              label: 'Daftar Sekarang'),
+                            onPressed: () {
+                              context.push(RegisterPersonalMagangPage());
+                            },
+                            label: 'Daftar Perorangan',
+                          ),
+                          SpaceHeight(16.0),
+                          Button.filled(
+                            onPressed: () {
+                              context.push(RegisterMagangPage());
+                            },
+                            label: 'Daftar Kelompok',
+                          ),
                         ],
                       ),
                     );
@@ -126,7 +137,7 @@ class _MagangPageState extends State<MagangPage> {
                                   const Spacer(),
                                   if (intern.status?.toLowerCase() !=
                                       'approved')
-                                    Chip(
+                                    ActionChip(
                                       backgroundColor: AppColors.red,
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
@@ -142,6 +153,145 @@ class _MagangPageState extends State<MagangPage> {
                                       labelStyle: const TextStyle(
                                         color: AppColors.white,
                                       ),
+                                      onPressed: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: const Text('Konfirmasi'),
+                                              content: const Text(
+                                                  'Apakah anda yakin ingin membatalkan pendaftaran?'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () {
+                                                    context.pop();
+                                                  },
+                                                  child: const Text('Batal'),
+                                                ),
+                                                // TextButton(
+                                                //   onPressed: () async {
+                                                //     context.pop();
+                                                //     context
+                                                //         .read<
+                                                //             DeleteInternshipBloc>()
+                                                //         .add(
+                                                //           DeleteInternshipEvent
+                                                //               .deleteInternship(
+                                                //             intern.id!,
+                                                //           ),
+                                                //         );
+                                                //     context
+                                                //         .read<
+                                                //             DeleteInternshipBloc>()
+                                                //         .stream
+                                                //         .listen(
+                                                //       (state) {
+                                                //         if (!mounted) return;
+                                                //         state.maybeWhen(
+                                                //           orElse: () {},
+                                                //           success: () {
+                                                //             if (!mounted)
+                                                //               return;
+                                                //             ScaffoldMessenger
+                                                //                     .of(context)
+                                                //                 .showSnackBar(
+                                                //               const SnackBar(
+                                                //                 content: Text(
+                                                //                   'Berhasil membatalkan pendaftaran',
+                                                //                 ),
+                                                //                 backgroundColor:
+                                                //                     AppColors
+                                                //                         .primary,
+                                                //               ),
+                                                //             );
+                                                //             context.pushReplacement(
+                                                //                 const MainPage());
+                                                //           },
+                                                //           error: (message) {
+                                                //             if (!mounted)
+                                                //               return;
+                                                //             ScaffoldMessenger
+                                                //                     .of(context)
+                                                //                 .showSnackBar(
+                                                //               SnackBar(
+                                                //                 content: Text(
+                                                //                   message,
+                                                //                 ),
+                                                //                 backgroundColor:
+                                                //                     AppColors
+                                                //                         .red,
+                                                //               ),
+                                                //             );
+                                                //           },
+                                                //         );
+                                                //       },
+                                                //     );
+                                                //   },
+                                                //   child: const Text('Ya'),
+                                                // ),
+                                                BlocConsumer<
+                                                    DeleteInternshipBloc,
+                                                    DeleteInternshipState>(
+                                                  listener: (context, state) {
+                                                    state.maybeWhen(
+                                                      orElse: () {},
+                                                      error: (message) {
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .showSnackBar(
+                                                          SnackBar(
+                                                            content:
+                                                                Text(message),
+                                                            backgroundColor:
+                                                                AppColors.red,
+                                                          ),
+                                                        );
+                                                      },
+                                                      success: () {
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .showSnackBar(
+                                                          const SnackBar(
+                                                            content: Text(
+                                                                'Berhasil membatalkan pendaftaran'),
+                                                            backgroundColor:
+                                                                AppColors
+                                                                    .primary,
+                                                          ),
+                                                        );
+                                                        context.pushReplacement(
+                                                          const MainPage(),
+                                                        );
+                                                      },
+                                                    );
+                                                  },
+                                                  builder: (context, state) {
+                                                    return state.maybeWhen(
+                                                        orElse: () {
+                                                      return TextButton(
+                                                        onPressed: () async {
+                                                          context
+                                                              .read<
+                                                                  DeleteInternshipBloc>()
+                                                              .add(
+                                                                DeleteInternshipEvent
+                                                                    .deleteInternship(
+                                                                  intern.id!,
+                                                                ),
+                                                              );
+                                                          context.pushReplacement(
+                                                              const MainPage());
+                                                        },
+                                                        child: const Text('Ya'),
+                                                      );
+                                                    });
+                                                  },
+                                                )
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
                                     ),
                                 ],
                               ),

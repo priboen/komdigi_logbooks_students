@@ -34,6 +34,8 @@ class Data {
   final int? leaderId;
   final String? projectId;
   final String? supervisorId;
+  final DateTime? startDate;
+  final DateTime? endDate;
   final String? campus;
   final String? status;
   final String? letterUrl;
@@ -50,6 +52,8 @@ class Data {
     this.leaderId,
     this.projectId,
     this.supervisorId,
+    this.startDate,
+    this.endDate,
     this.campus,
     this.status,
     this.letterUrl,
@@ -71,6 +75,11 @@ class Data {
         leaderId: json["leader_id"],
         projectId: json["project_id"],
         supervisorId: json["supervisor_id"],
+        startDate: json["start_date"] == null
+            ? null
+            : DateTime.parse(json["start_date"]),
+        endDate:
+            json["end_date"] == null ? null : DateTime.parse(json["end_date"]),
         campus: json["campus"],
         status: json["status"],
         letterUrl: json["letter_url"],

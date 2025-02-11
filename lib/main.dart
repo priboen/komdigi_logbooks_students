@@ -11,8 +11,10 @@ import 'package:komdigi_logbooks_students/presentation/auth/bloc/logout_bloc/log
 import 'package:komdigi_logbooks_students/presentation/auth/pages/login_page.dart';
 import 'package:komdigi_logbooks_students/presentation/grades/bloc/get_grades/get_grades_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/add_internship/add_internship_bloc.dart';
+import 'package:komdigi_logbooks_students/presentation/magang/bloc/delete_internship/delete_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/get_internship/get_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/get_pembimbing/get_pembimbing_bloc.dart';
+import 'package:komdigi_logbooks_students/presentation/magang/bloc/peronsal_internship/peronsal_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/profile/bloc/update_profile_bloc/update_profile_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/progress/bloc/add_progress/add_progress_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/progress/bloc/get_progress/get_progress_bloc.dart';
@@ -62,6 +64,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => UpdateProfileBloc(AuthRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => PeronsalInternshipBloc(InternshipRemoteDatasources()),
+        ),
+        BlocProvider(
+          create: (context) => DeleteInternshipBloc(InternshipRemoteDatasources()),
         ),
       ],
       child: MaterialApp(

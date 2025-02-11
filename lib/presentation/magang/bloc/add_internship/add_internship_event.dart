@@ -11,5 +11,7 @@ class AddInternshipEvent with _$AddInternshipEvent {
     required int? supervisorId,
     required File letterUrl,
     required File memberPhotoUrl,
+    required String startDate,
+    required String endDate,
   }) = _AddInternship;
 }

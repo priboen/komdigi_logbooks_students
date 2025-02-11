@@ -9,30 +9,26 @@ import 'package:komdigi_logbooks_students/core/core.dart';
 import 'package:komdigi_logbooks_students/core/extensions/build_context_ext.dart';
 import 'package:komdigi_logbooks_students/datasources/auth_local_datasources.dart';
 import 'package:komdigi_logbooks_students/models/auth_response_model.dart';
-import 'package:komdigi_logbooks_students/presentation/magang/bloc/add_internship/add_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/bloc/get_pembimbing/get_pembimbing_bloc.dart';
+import 'package:komdigi_logbooks_students/presentation/magang/bloc/peronsal_internship/peronsal_internship_bloc.dart';
 import 'package:komdigi_logbooks_students/presentation/magang/widgets/success_registration_page.dart';
 import 'package:komdigi_logbooks_students/presentation/project/bloc/get_project/get_project_bloc.dart';
 
-class RegisterMagangPage extends StatefulWidget {
-  const RegisterMagangPage({super.key});
+class RegisterPersonalMagangPage extends StatefulWidget {
+  const RegisterPersonalMagangPage({super.key});
 
   @override
-  State<RegisterMagangPage> createState() => _RegisterMagangPageState();
+  State<RegisterPersonalMagangPage> createState() =>
+      _RegisterPersonalMagangPageState();
 }
 
-class _RegisterMagangPageState extends State<RegisterMagangPage> {
+class _RegisterPersonalMagangPageState
+    extends State<RegisterPersonalMagangPage> {
   User? user;
-  late final TextEditingController ketuacontroller;
-  late final TextEditingController anggotacontroller;
-  late final TextEditingController anggotaDuacontroller;
-  late final TextEditingController anggotaTigacontroller;
-  late final TextEditingController anggotaEmpatcontroller;
-  late final TextEditingController anggotaLimacontroller;
-  late final TextEditingController namaKampuscontroller;
-  late final TextEditingController emailcontroller;
-  late final TextEditingController datecontroller;
-  late final TextEditingController enddatecontroller;
+  late final TextEditingController dateController;
+  late final TextEditingController endDateController;
+  late final TextEditingController emailController;
+  late final TextEditingController campusController;
   String? selectedProject;
   String? selectedSupervisor;
   String? uploadedFileName;
@@ -43,25 +39,24 @@ class _RegisterMagangPageState extends State<RegisterMagangPage> {
     if (authData != null) {
       setState(() {
         user = authData.user;
-        ketuacontroller.text = user!.email ?? '';
+        emailController.text = user!.email ?? '';
         print(user!.id);
       });
     }
   }
 
+  String formatDate(DateTime date) {
+    final dateFormatter = DateFormat('yyyy-MM-dd');
+    return dateFormatter.format(date);
+  }
+
   @override
   void initState() {
     _loadUserData();
-    ketuacontroller = TextEditingController();
-    anggotacontroller = TextEditingController();
-    anggotaDuacontroller = TextEditingController();
-    anggotaTigacontroller = TextEditingController();
-    anggotaEmpatcontroller = TextEditingController();
-    anggotaLimacontroller = TextEditingController();
-    namaKampuscontroller = TextEditingController();
-    emailcontroller = TextEditingController();
-    datecontroller = TextEditingController();
-    enddatecontroller = TextEditingController();
+    emailController = TextEditingController();
+    dateController = TextEditingController();
+    campusController = TextEditingController();
+    endDateController = TextEditingController();
     context.read<GetProjectBloc>().add(const GetProjectEvent.getProject());
     context
         .read<GetPembimbingBloc>()
@@ -69,16 +64,11 @@ class _RegisterMagangPageState extends State<RegisterMagangPage> {
     super.initState();
   }
 
-    String formatDate(DateTime date) {
-    final dateFormatter = DateFormat('yyyy-MM-dd');
-    return dateFormatter.format(date);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daftar Kelompok'),
+        title: const Text('Daftar Perseorangan'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -89,49 +79,25 @@ class _RegisterMagangPageState extends State<RegisterMagangPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomTextField(
-                controller: ketuacontroller,
-                label: 'Email Ketua',
+                controller: emailController,
+                label: 'Email',
+                readOnly: true,
               ),
               SpaceHeight(16.0),
               CustomTextField(
-                controller: anggotacontroller,
-                label: 'Email Anggota 1',
-              ),
-              SpaceHeight(16.0),
-              CustomTextField(
-                controller: anggotaDuacontroller,
-                label: 'Email Anggota 2',
-              ),
-              SpaceHeight(16.0),
-              CustomTextField(
-                controller: anggotaTigacontroller,
-                label: 'Email Anggota 3',
-              ),
-              SpaceHeight(16.0),
-              CustomTextField(
-                controller: anggotaEmpatcontroller,
-                label: 'Email Anggota 4',
-              ),
-              SpaceHeight(16.0),
-              CustomTextField(
-                controller: anggotaLimacontroller,
-                label: 'Email Anggota 5',
-              ),
-              SpaceHeight(16.0),
-              CustomTextField(
-                controller: namaKampuscontroller,
+                controller: campusController,
                 label: 'Nama Kampus',
               ),
               SpaceHeight(16.0),
               CustomDatePicker(
                 label: 'Tanggal Mulai',
                 onDateSelected: (selectedDate) =>
-                    datecontroller.text = formatDate(selectedDate).toString(),
+                    dateController.text = formatDate(selectedDate).toString(),
               ),
               SpaceHeight(16.0),
               CustomDatePicker(
                 label: 'Tanggal Selesai',
-                onDateSelected: (selectedDate) => enddatecontroller.text =
+                onDateSelected: (selectedDate) => endDateController.text =
                     formatDate(selectedDate).toString(),
               ),
               SpaceHeight(16.0),
@@ -259,7 +225,7 @@ class _RegisterMagangPageState extends State<RegisterMagangPage> {
                 ],
               ),
               SpaceHeight(16.0),
-              Text('Upload Surat Permohonan Magang'),
+              Text('Upload Foto Peserta Magang'),
               Row(
                 children: [
                   ElevatedButton(
@@ -287,8 +253,8 @@ class _RegisterMagangPageState extends State<RegisterMagangPage> {
                   ),
                 ],
               ),
-              SpaceHeight(16.0),
-              BlocConsumer<AddInternshipBloc, AddInternshipState>(
+              SpaceHeight(32.0),
+              BlocConsumer<PeronsalInternshipBloc, PeronsalInternshipState>(
                 listener: (context, state) {
                   state.maybeWhen(
                     orElse: () {
@@ -305,17 +271,16 @@ class _RegisterMagangPageState extends State<RegisterMagangPage> {
                       );
                       print(message);
                     },
-                    success: (data) {
-                      ketuacontroller.clear();
-                      anggotacontroller.clear();
-                      anggotaDuacontroller.clear();
-                      anggotaTigacontroller.clear();
-                      anggotaEmpatcontroller.clear();
-                      anggotaLimacontroller.clear();
-                      namaKampuscontroller.clear();
+                    success: (internship) {
+                      emailController.dispose();
+                      campusController.dispose();
+                      dateController.dispose();
+                      endDateController.dispose();
+
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('Berhasil mendaftar magang'),
+                          content: Text('Pendaftaran berhasil'),
+                          backgroundColor: AppColors.primary,
                         ),
                       );
                       context.push(const SuccessRegistrationPage());
@@ -326,71 +291,57 @@ class _RegisterMagangPageState extends State<RegisterMagangPage> {
                   return state.maybeWhen(
                     orElse: () {
                       return Button.filled(
-                          onPressed: () {
-                            if (uploadedFileName == null ||
-                                uploadedFilePhotoName == null) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text(
-                                      'Harap upload semua file yang diperlukan'),
+                        onPressed: () {
+                          if (uploadedFileName == null ||
+                              uploadedFilePhotoName == null) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                    'Harap upload semua file yang diperlukan'),
+                                backgroundColor: AppColors.red,
+                              ),
+                            );
+                            return;
+                          }
+                          final letterFile = File(uploadedFileName!);
+                          final memberPhotoFile = File(uploadedFilePhotoName!);
+                          if (!letterFile.existsSync() ||
+                              !memberPhotoFile.existsSync()) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                    'File tidak ditemukan. Harap pilih ulang file.'),
+                              ),
+                            );
+                            return;
+                          }
+                          context.read<PeronsalInternshipBloc>().add(
+                                PeronsalInternshipEvent.addPersonalInternship(
+                                  emailLeader: emailController.text,
+                                  projectId: int.parse(selectedProject ?? '0'),
+                                  supervisorId:
+                                      int.parse(selectedSupervisor ?? '0'),
+                                  letterUrl: uploadedFileName != null
+                                      ? File(uploadedFileName!)
+                                      : File(''),
+                                  memberPhotoUrl: uploadedFilePhotoName != null
+                                      ? File(uploadedFilePhotoName!)
+                                      : File(''),
+                                  campusName: campusController.text,
+                                  startDate: dateController.text,
+                                  endDate: endDateController.text,
                                 ),
                               );
-                              return;
-                            }
-                            final letterFile = File(uploadedFileName!);
-                            final memberPhotoFile =
-                                File(uploadedFilePhotoName!);
-                            if (!letterFile.existsSync() ||
-                                !memberPhotoFile.existsSync()) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text(
-                                      'File tidak ditemukan. Harap pilih ulang file.'),
-                                ),
-                              );
-                              return;
-                            }
-                            context.read<AddInternshipBloc>().add(
-                                  AddInternshipEvent.addInternship(
-                                    emailLeader: ketuacontroller.text,
-                                    projectId:
-                                        int.parse(selectedProject ?? '0'),
-                                    supervisorId:
-                                        int.parse(selectedSupervisor ?? '0'),
-                                    letterUrl: uploadedFileName != null
-                                        ? File(uploadedFileName!)
-                                        : File(''),
-                                    memberPhotoUrl:
-                                        uploadedFilePhotoName != null
-                                            ? File(uploadedFilePhotoName!)
-                                            : File(''),
-                                    memberEmails: [
-                                      if (anggotacontroller.text.isNotEmpty)
-                                        anggotacontroller.text,
-                                      if (anggotaDuacontroller.text.isNotEmpty)
-                                        anggotaDuacontroller.text,
-                                      if (anggotaTigacontroller.text.isNotEmpty)
-                                        anggotaTigacontroller.text,
-                                      if (anggotaEmpatcontroller
-                                          .text.isNotEmpty)
-                                        anggotaEmpatcontroller.text,
-                                      if (anggotaLimacontroller.text.isNotEmpty)
-                                        anggotaLimacontroller.text,
-                                    ],
-                                    campusName: namaKampuscontroller.text,
-                                    startDate: datecontroller.text,
-                                    endDate: enddatecontroller.text,
-                                  ),
-                                );
-                          },
-                          label: 'Daftar');
+                        },
+                        label: 'Daftar',
+                      );
                     },
                     loading: () => const Center(
                       child: CircularProgressIndicator(),
                     ),
                   );
                 },
-              )
+              ),
             ],
           ),
         ),
