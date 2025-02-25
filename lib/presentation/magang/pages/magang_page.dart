@@ -96,6 +96,8 @@ class _MagangPageState extends State<MagangPage> {
                             : 'Tidak ada status';
                         if (intern.status?.toLowerCase() == 'approved') {
                           status = 'Diterima';
+                        } else if (intern.status?.toLowerCase() == 'rejected') {
+                          status = 'Ditolak';
                         } else {
                           status = 'Diproses';
                         }
