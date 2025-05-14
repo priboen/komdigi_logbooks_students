@@ -31,11 +31,15 @@ class AppColors {
 
   static const Color red = Color(0xffE81E1F);
 
-  static Color homeGreen = const Color(0xff1AD598).withOpacity(0.2);
+  static Color homeGreen =
+      const Color(0xff1AD598).withAlpha((0.2 * 255).toInt());
 
-  static Color homeBlue = const Color(0xff0090FF).withOpacity(0.2);
+  static Color homeBlue =
+      const Color(0xff0090FF).withAlpha((0.2 * 255).toInt());
 
-  static Color homeYellow = const Color(0xffF9AF1A).withOpacity(0.2);
+  static Color homeYellow =
+      const Color(0xffF9AF1A).withAlpha((0.2 * 255).toInt());
 
-  static Color homePurple = const Color(0xff895BF1).withOpacity(0.2);
+  static Color homePurple =
+      const Color(0xff895BF1).withAlpha((0.2 * 255).toInt());
 }

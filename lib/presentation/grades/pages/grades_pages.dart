@@ -84,6 +84,7 @@ class _GradesPagesState extends State<GradesPages> {
               },
               loaded: (grades) {
                 final gradeUrl = grades.gradeUrl;
+                print('Grade URL : $gradeUrl');
                 return SfPdfViewer.network(
                   gradeUrl ?? '',
                   onDocumentLoaded: (details) {
@@ -91,7 +92,10 @@ class _GradesPagesState extends State<GradesPages> {
                   },
                   onDocumentLoadFailed: (details) {
                     print("Failed to load PDF: ${details.description}");
+                    print("Error code: ${details.error}");
+                    print("Error code: ${details.hashCode}");
                   },
+                  // 'http://localhost:8000/storage/grades/1/XuPaBXq0hzLQzNHTv5VjlWpmEnIAuurr7yXDtGee.pdf'
                 );
               },
             );
